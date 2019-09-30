@@ -6,12 +6,15 @@
   </head>
   <body>
     <input type="text" />
+    当前输入值为:<span></span>
   </body>
 </html>
 <script>
   var str = ""; //str变量用于存储密码
   //获取input元素
   var input = document.getElementsByTagName("input")[0];
+  //获取span元素
+  var span = document.getElementsByTagName("span")[0];
   input.oninput = function(evt) {
     var val = this.value; //取到输入框的值
     if (val.length > str.length) {
@@ -36,7 +39,7 @@
         this.value = this.value.replace(/./g, "*");
       }
     }, 1000);
-    console.log(this.value);
-    console.log(str);
+    span.innerHTML = str;
   };
 </script>
+
